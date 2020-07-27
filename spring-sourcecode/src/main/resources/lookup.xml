@@ -7,11 +7,10 @@
         http://www.springframework.org/schema/context
         https://www.springframework.org/schema/context/spring-context.xsd">
 
+	<bean id="getBeanTest" class="top.hellooooo.sourcecode.charpter02.test.lookup.GetBeanTest">
+		<lookup-method name="getBean" bean="student"/>
+	</bean>
 
-<bean id="myTestBean" class="top.hellooooo.sourcecode.charpter02.bean.MyTestBean">
-
-	<meta key="testStr" value="aaaaaa"/>
-</bean>
-
+	<bean id="student" class="top.hellooooo.sourcecode.charpter02.bean.Student"/>
+	<bean id="teacher" class="top.hellooooo.sourcecode.charpter02.bean.Teacher"/>
 </beans>
-

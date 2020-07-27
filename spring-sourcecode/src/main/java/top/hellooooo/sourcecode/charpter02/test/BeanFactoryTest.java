@@ -1,8 +1,8 @@
 package top.hellooooo.sourcecode.charpter02.test;
 
-import org.springframework.beans.factory.BeanFactory;
-import org.springframework.beans.factory.xml.XmlBeanFactory;
-import org.springframework.core.io.ClassPathResource;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import top.hellooooo.sourcecode.charpter02.bean.MyTestBean;
 
 /**
  * @Author Q
@@ -15,7 +15,10 @@ public class BeanFactoryTest {
 	}
 
 	public static void testSimpleLoad(){
-		BeanFactory beanFactory = new XmlBeanFactory(new ClassPathResource("charpter02.xml"));
-		System.out.println(beanFactory.getBean("myTestBean"));
+		ApplicationContext context = new ClassPathXmlApplicationContext("charpter02.xml");
+		MyTestBean myTestBean = (MyTestBean) context.getBean("myTestBean");
+		System.out.println(myTestBean);
+//		BeanFactory beanFactory = new XmlBeanFactory(new ClassPathResource("charpter02.xml"));
+//		System.out.println(beanFactory.getBean("myTestBean"));
 	}
 }
