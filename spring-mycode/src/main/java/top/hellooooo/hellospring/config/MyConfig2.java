@@ -2,6 +2,7 @@ package top.hellooooo.hellospring.config;
 
 import org.springframework.context.annotation.*;
 import top.hellooooo.hellospring.bean.Color;
+import top.hellooooo.hellospring.bean.ColorFactoryBean;
 import top.hellooooo.hellospring.bean.Person;
 import top.hellooooo.hellospring.bean.Red;
 import top.hellooooo.hellospring.condition.LinuxCondition;
@@ -35,5 +36,10 @@ public class MyConfig2 {
 	@Bean("pass")
 	public Person person02() {
 		return new Person("pass", 21);
+	}
+
+	@Bean
+	public ColorFactoryBean colorFactoryBean(){
+		return new ColorFactoryBean();
 	}
 }

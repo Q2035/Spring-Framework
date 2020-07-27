@@ -3,6 +3,7 @@ package top.hellooooo.hellospring.test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.core.env.Environment;
+import top.hellooooo.hellospring.bean.ColorFactoryBean;
 import top.hellooooo.hellospring.bean.Person;
 import top.hellooooo.hellospring.config.MyConfig;
 import top.hellooooo.hellospring.config.MyConfig2;
@@ -56,6 +57,12 @@ public class IOCTest {
 
 	public void testImport(){
 		printBeans(context);
+
+		Object colorFactoryBean1 = context.getBean("colorFactoryBean");
+		Object colorFactoryBean2 = context.getBean("colorFactoryBean");
+		Object colorFactoryBean = context.getBean("&colorFactoryBean");
+		System.out.println(colorFactoryBean.getClass());
+		System.out.println(colorFactoryBean1 == colorFactoryBean2);
 	}
 
 	private void printBeans(ApplicationContext context) {
