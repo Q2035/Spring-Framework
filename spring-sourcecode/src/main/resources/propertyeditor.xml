@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+
+<!--	注册自定义属性编辑器到Spring中-->
+	<bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+		<property name="customEditors">
+			<map>
+				<entry key="java.util.Date" value="top.hellooooo.sourcecode.charpter06.config.DatePropertyEditor"/>
+			</map>
+		</property>
+	</bean>
+
+	<bean id="man" class="top.hellooooo.sourcecode.charpter06.bean.Man">
+		<property name="birth" value="2020-04-12"/>
+	</bean>
+</beans>
+
