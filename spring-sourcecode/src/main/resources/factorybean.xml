@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+
+<!--	error！Attribute 'carinfo' is not allowed to appear in element 'bean'.-->
+<!--	<bean id="car" class="top.hellooooo.sourcecode.charpter05.bean.CarFactoryBean" carinfo="Super Car,400,2000000"/>-->
+
+	<bean id="car" class="top.hellooooo.sourcecode.charpter05.bean.CarFactoryBean">
+		<property name="carInfo" value="Super Car,400,2000000"/>
+	</bean>
+</beans>
+

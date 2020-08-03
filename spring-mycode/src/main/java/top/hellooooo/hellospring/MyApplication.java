@@ -14,11 +14,11 @@ public class MyApplication {
 	public static void main(String[] args) {
 //		ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
 		ApplicationContext context = new AnnotationConfigApplicationContext(MyConfig.class);
-//		Person person = (Person) context.getBean("person");
-//		System.out.println(person);
-		String[] beanNamesForType = context.getBeanNamesForType(Person.class);
-		for (String s : beanNamesForType) {
-			System.out.println(s);
-		}
+		Person person = (Person) context.getBean("person");
+		System.out.println(person);
+//		String[] beanNamesForType = context.getBeanNamesForType(Person.class);
+//		for (String s : beanNamesForType) {
+//			System.out.println(s);
+//		}
 	}
 }
