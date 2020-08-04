@@ -6,7 +6,10 @@ group 'org.springframework'
 version '5.3.0-SNAPSHOT'
 
 repositories {
-    mavenCentral()
+    maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
+    maven { url 'https://maven.aliyun.com/repository/google' }
+    maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+    maven { url 'https://maven.aliyun.com/repository/jcenter'}
 }
 
 dependencies {
