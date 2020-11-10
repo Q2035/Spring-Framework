@@ -2,11 +2,15 @@ package top.hellooooo.blog;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import top.hellooooo.blog.bean.Cat;
-import top.hellooooo.blog.bean.Dog;
-import top.hellooooo.blog.bean.User;
-import top.hellooooo.blog.config.BeanConfig;
-import top.hellooooo.blog.config.ImportConfig;
+import org.springframework.core.io.ClassPathResource;
+import top.hellooooo.blog.autowire.A;
+import top.hellooooo.blog.autowire.AutowiredConfig;
+import top.hellooooo.blog.autowire.B;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 /**
  * @Author Q
@@ -15,15 +19,14 @@ import top.hellooooo.blog.config.ImportConfig;
  */
 public class BeanApplication {
 
-	public static void main(String[] args) {
-		ApplicationContext applicationContext = new AnnotationConfigApplicationContext(ImportConfig.class);
-//		printBeans(applicationContext);
-//		User user = applicationContext.getBean(User.class);
-//		System.out.println(user);
-		Dog bean = applicationContext.getBean(Dog.class);
-		Dog dog = (Dog) applicationContext.getBean("dog");
-		System.out.println(bean == dog);
-		((AnnotationConfigApplicationContext) applicationContext).close();
+	public static void main(String[] args) throws IOException {
+		ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AutowiredConfig.class);
+		A bean = applicationContext.getBean(A.class);
+		bean.process();
+		A bean2 = applicationContext.getBean(A.class);
+		bean2.process();
+		System.out.println(bean);
+		System.out.println(bean2);
 	}
 
 	public static void printBeans(ApplicationContext applicationContext) {

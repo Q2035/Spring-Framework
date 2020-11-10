@@ -8,6 +8,7 @@ import top.hellooooo.blog.bean.FactoryBeanCat;
  * @Date 07/11/2020 11:24
  * @Description
  */
-@Import({ForImport.class, FactoryBeanCat.class})
+//@Import({ForImport.class, FactoryBeanCat.class, MyBeanPostProcessor.class})
 public class ImportConfig {
+
 }
