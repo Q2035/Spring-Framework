@@ -1,6 +1,7 @@
 package top.hellooooo.hellospring.aop.aspect;
 
 import org.aspectj.lang.annotation.*;
+
 /**
  * @Author Q
  * @Date 11/11/2020 08:13
@@ -9,7 +10,7 @@ import org.aspectj.lang.annotation.*;
 @Aspect
 public class LogAspect {
 
-	@PointCut("execution(public int top.hellooooo.hellospring.aop.bean.div(int,int))")
+	@Pointcut("execution(public int top.hellooooo.hellospring.aop.bean.MathCalculator.div(int,int))")
 	public void pointCut(){
 	}
 
@@ -23,7 +24,7 @@ public class LogAspect {
 		System.out.println("除法结束");
 	}
 
-	@AfterReturing("pointCut()")
+	@AfterReturning("pointCut()")
 	public void logReturn(){
 		System.out.println("正常返回");
 	}

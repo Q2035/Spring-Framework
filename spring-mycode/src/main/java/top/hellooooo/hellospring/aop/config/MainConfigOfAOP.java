@@ -16,7 +16,7 @@ import top.hellooooo.hellospring.aop.bean.MathCalculator;
 public class MainConfigOfAOP {
 	//将业务逻辑类加入容器
 	@Bean
-	public MathCalculator calculator(){
+	public MathCalculator mathCalculator(){
 		return new MathCalculator();
 	}
 

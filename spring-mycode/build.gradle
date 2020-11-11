@@ -13,4 +13,9 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
     compile project(":spring-context")
     compile project(":spring-web")
+
+    //搞半天，死活导入不了AspectJ的依赖。。。
+    //原来是这里阙Spring Aspect的依赖
+    compile project(":spring-aspects")
+
 }
