@@ -1,5 +1,6 @@
 package top.hellooooo.hellospring.aop.aspect;
 
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.*;
 
 /**
@@ -15,7 +16,10 @@ public class LogAspect {
 	}
 
 	@Before("pointCut()")
-	public void logStart(){
+	public void logStart(JoinPoint joinPoint) {
+		String name = joinPoint.getSignature().getName();
+		Object[] args = joinPoint.getArgs();
+		System.out.println(name + " with" + args);
 		System.out.println("除法运行");
 	}
 
@@ -24,13 +28,13 @@ public class LogAspect {
 		System.out.println("除法结束");
 	}
 
-	@AfterReturning("pointCut()")
-	public void logReturn(){
-		System.out.println("正常返回");
+	@AfterReturning(value = "pointCut()",returning = "returnVal")
+	public void logReturn(Object returnVal){
+		System.out.println("正常返回" + " with " + returnVal);
 	}
 
-	@AfterThrowing("pointCut()")
-	public void logException(){
+	@AfterThrowing(value = "pointCut()",throwing = "exception")
+	public void logException(Exception exception){
 		System.out.println("除法异常");
 	}
 }
