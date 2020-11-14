@@ -17,5 +17,8 @@ dependencies {
     //搞半天，死活导入不了AspectJ的依赖。。。
     //原来是这里阙Spring Aspect的依赖
     compile project(":spring-aspects")
+    // 事务导入Spring的JDBC模块
+    compile project(":spring-jdbc")
 
+    compile ("mysql:mysql-connector-java:8.0.17")
 }
